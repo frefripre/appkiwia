@@ -168,15 +168,31 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/buttonHeight"
                     android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="32dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/selectable_background"
+                    android:background="@drawable/select_background"
                     android:text="@string/make_discoverable"
                     android:textAllCaps="false"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/colorPrimary"
                     android:textStyle="bold" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button"
+                    style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_chat_sent_background"
+                    android:text="Jardin de Radios" />
             </LinearLayout>
 
         </LinearLayout>
