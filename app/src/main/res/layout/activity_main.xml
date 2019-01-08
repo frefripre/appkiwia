@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background_chat"
+    app:statusBarBackground="@android:color/background_light">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,6 +15,7 @@
             android:id="@+id/appBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/gradient"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -33,7 +35,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/app_name"
-                    android:textColor="@color/colorPrimaryText"
+                    android:textColor="@android:color/background_light"
                     android:textSize="@dimen/titleTextSize"
                     android:textStyle="bold" />
 
@@ -93,13 +95,13 @@
                             android:layout_marginStart="32dp"
                             android:layout_marginTop="16dp"
                             android:text="@string/paired_devices"
-                            android:textColor="@color/colorPrimaryText"
+                            android:textColor="@color/white"
                             android:textStyle="bold"
                             android:visibility="gone" />
 
                         <android.support.v7.widget.RecyclerView
                             android:id="@+id/recyclerViewPaired"
-                            android:layout_width="match_parent"
+                            android:layout_width="192dp"
                             android:layout_height="wrap_content"
                             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
@@ -107,21 +109,22 @@
 
                     <LinearLayout
                         android:id="@+id/headerLabelContainer"
-                        android:layout_width="match_parent"
+                        android:layout_width="190dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/pairedContainer"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0dp"
                         android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/headerLabel"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginStart="32dp"
-                            android:layout_marginTop="16dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
                             android:text="@string/searching"
-                            android:textColor="@color/colorPrimaryText"
-                            android:textStyle="bold" />
+                            android:textAllCaps="false"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                            android:textColor="@color/white" />
 
                         <ProgressBar
                             android:id="@+id/progressBar"
@@ -134,9 +137,11 @@
 
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/recyclerView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/headerLabelContainer"
+                        android:layout_width="190dp"
+                        android:layout_height="169dp"
+                        android:layout_alignStart="@+id/headerLabelContainer"
+                        android:layout_below="@+id/headerLabelContainer"
+                        android:textAlignment="center"
                         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
                 </RelativeLayout>
@@ -152,12 +157,12 @@
                     android:id="@+id/search_devices"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/buttonHeight"
-                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginStart="32dp"
+                    android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/selectable_background"
+                    android:background="@drawable/rounded_background"
                     android:text="@string/search_devices"
                     android:textAllCaps="false"
                     android:textColor="@color/colorAccent"
@@ -188,7 +193,7 @@
                 <Button
                     android:id="@+id/button"
                     style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/rounded_chat_sent_background"
