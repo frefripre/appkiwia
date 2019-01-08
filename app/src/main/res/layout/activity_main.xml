@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_chat"
     app:statusBarBackground="@android:color/background_light">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/background_light">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/gradient"
+            android:background="@color/colorPrimary"
             android:orientation="vertical">
 
             <RelativeLayout
@@ -35,7 +35,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
                     android:text="@string/app_name"
-                    android:textColor="@android:color/background_light"
+                    android:textColor="@color/colorPrimaryText"
                     android:textSize="@dimen/titleTextSize"
                     android:textStyle="bold" />
 
@@ -56,7 +56,9 @@
                     <TextView
                         android:id="@+id/status"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="12dp"/>
 
                 </LinearLayout>
 
@@ -72,9 +74,47 @@
             android:orientation="vertical"
             android:weightSum="5">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="0.8"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/make_visible"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/buttonHeight"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/select_background"
+                    android:text="@string/make_discoverable"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/search_devices"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/buttonHeight"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_background"
+                    android:text="@string/search_devices"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/background_dark"
+                    android:textColorLink="@android:color/black"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
             <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="88dp"
                 android:layout_weight="4.2">
 
                 <RelativeLayout
@@ -91,11 +131,8 @@
                             android:id="@+id/headerLabelPaired"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginStart="32dp"
-                            android:layout_marginTop="16dp"
                             android:text="@string/paired_devices"
-                            android:textColor="@color/white"
+                            android:textColor="@color/colorPrimaryText"
                             android:textStyle="bold"
                             android:visibility="gone" />
 
@@ -124,7 +161,7 @@
                             android:text="@string/searching"
                             android:textAllCaps="false"
                             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/colorPrimaryText" />
 
                         <ProgressBar
                             android:id="@+id/progressBar"
@@ -149,56 +186,30 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.8"
-                android:weightSum="2">
-
-                <Button
-                    android:id="@+id/search_devices"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/buttonHeight"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounded_background"
-                    android:text="@string/search_devices"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/make_visible"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/buttonHeight"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginEnd="32dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/select_background"
-                    android:text="@string/make_discoverable"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/button"
-                    style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/rounded_chat_sent_background"
-                    android:text="Jardin de Radios" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.8"
+                android:textAlignment="center"
+                android:background="@drawable/gradient"
+                android:text="kiwia es una APP en emprendimiento que estamos desarrollando y que surge de la idea de hacer más entretenidos los viajes en autobús, metro o los momentos en donde compartas con multitudes de personas. Somos un sistema de CHAT CERCANO el que te ayudara y te sacara de apuros ante tus necesidades."
+                android:textColor="#fff"
+               />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="144dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.8"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/logod" />
 
         </LinearLayout>
 

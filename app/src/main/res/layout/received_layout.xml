@@ -22,14 +22,12 @@
         android:id="@+id/timeStamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/receivedMessage"
         android:paddingEnd="@dimen/chat_message_padding"
         android:paddingStart="@dimen/chat_message_padding"
-        android:layout_marginTop="8dp"
-        android:layout_below="@id/receivedMessage"
-        android:layout_alignParentStart="true"
-        android:textColor="@color/grey"
         android:text="@string/test_stamp"
-        android:textSize="15sp"
-        />
+        android:textColor="@android:color/darker_gray"
+        android:textSize="10sp" />
 
 </RelativeLayout>
