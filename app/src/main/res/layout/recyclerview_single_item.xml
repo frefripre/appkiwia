@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingBottom="5dp"
-            android:textSize="60px"
+            android:textSize="33px"
             android:paddingLeft="10dp"
             android:paddingRight="5dp"
             android:paddingTop="5dp"
