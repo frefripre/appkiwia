@@ -7,10 +7,12 @@
     tools:context="com.webianks.bluechat.MainActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="527dp"
+        android:layout_height="292dp"
         android:paddingLeft="95dp"
         android:paddingTop="100dp"
-        android:scaleType="matrix"
-        android:src="@drawable/logo" />/>
+        android:scaleType="centerInside"
+        android:src="@drawable/logo"
+        tools:layout_editor_absoluteX="-143dp"
+        tools:layout_editor_absoluteY="-59dp" />/>
 </android.support.constraint.ConstraintLayout>
